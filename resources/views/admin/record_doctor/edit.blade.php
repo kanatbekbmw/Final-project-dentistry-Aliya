@@ -54,7 +54,7 @@
               <label for="namee" class="col-md-3 col-form-label text-md-end">Дата приема</label>
 
               <div class="col-md-2">
-                  <input type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date" autofocus>
+                  <input type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ $card->date }}" required autocomplete="date" autofocus>
 
                   @error('date')
                       <span class="invalid-feedback" role="alert">
@@ -69,7 +69,6 @@
 
               <div class="col-md-6">
                 <select name="time">
-                    <option style='background:red' value="08:00">08:00</option>
                     <option value="09:00">09:00</option>
                     <option value="10:00">10:00</option>
                     <option value="11:00">11:00</option>
@@ -79,7 +78,7 @@
                     <option value="15:00">15:00</option>
                     <option value="16:00">16:00</option>
                     <option value="17:00">17:00</option>
-                    <option value="18:00">18:00</option>            
+                    <option value="18:00">18:00</option>
                 </select>
               </div>
           </div>
@@ -91,8 +90,8 @@
               <div class="col-md-6">
                 <select name="user_id">
                     @foreach($user as $row)
-                        <option value="{{ $row->id }}"> {{ $row->name }} </option>
-                    @endforeach            
+                        <option value="{{ $row->id }}" @if($row->id == $card->user_id) {{ 'selected' }} @endif> {{ $row->name }} </option>
+                    @endforeach
                 </select>
               </div>
           </div>
@@ -108,7 +107,7 @@
       </form>
   </div>
 </div>
-    
+
   </table>
 
 

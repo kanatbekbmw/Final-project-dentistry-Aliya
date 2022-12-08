@@ -6,15 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\User as ModelsUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Filters\DailyFilter;
 
 use App\Models\DailyAccountings;
 use Ramsey\Uuid\Type\Integer;
 
 class DailyAccountingsController extends Controller
 {
-    public function index()
+    public function index(DailyFilter $request)
     {
-        $card = DailyAccountings::where('user_id', Auth::user()->id)->get();
+        $card = DailyAccountings::where('user_id', Auth::user()->id)->filter($request)->paginate(1);
         return view('doctor.daily_accountings.index', compact('card'));
     }
 

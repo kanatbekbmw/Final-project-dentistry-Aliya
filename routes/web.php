@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 
@@ -55,7 +55,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //     });
 // });
 
-Route::get('/admin', [IndexController::class, 'index'])->name('admin');
+Route::get('/admin', [UserController::class, 'index'])->name('admin');
 
 Route::get('/admin/users/index', [UserController::class, 'index'])->name('users');
 
@@ -72,9 +72,10 @@ Route::get('/admin/record/index', [RecordController::class, 'index'])->name('rec
 Route::get('/admin/record/create', [RecordController::class, 'create'])->name('admin-create-record');
 Route::post('/admin/record/store', [RecordController::class, 'store'])->name('admin-store-record');
 
+Route::post('/admin/record/destroy/{id}', [RecordController::class, 'destroy'])->name('admin-destroy-record');
 
 
-Route::get('/admin/record_doctor/index', [RecordController::class, 'index1'])->name('admin-record_doctor');
+Route::get('/admin/record_doctor/index', [RecordController::class, 'record_calendar'])->name('admin-record_doctor');
 
 Route::get('/admin/record_doctor/edit/{id}', [RecordController::class, 'edit'])->name('admin-edit-record_doctor');
 Route::post('/admin/record_doctor/update/{id}', [RecordController::class, 'update'])->name('admin-update-record_doctor');

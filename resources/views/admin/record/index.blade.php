@@ -11,7 +11,6 @@
             <th>Описание</th>
             <th>Номер телефона</th>
             <th>Записать на прием</th>
-            <td>Обновить</td>
             <td>Удалить</td>
           </tr>
         </thead>
@@ -22,9 +21,8 @@
                     <td>{{ $row->description }}</td>
                     <td>{{ $row->number }}</td>
                     <td><a href="{{ route('admin-edit-record_doctor', $row->id) }}">Записать к врачу</a></td>
-                    <td><a href="{{-- route('admin-edit-accountings', $row->id) --}}">Обновить</a></td>
                     <td>
-                        <form action="{{-- route('admin-destroy-accountings', $row->id) --}}" method="POST">
+                        <form action="{{ route('admin-destroy-record', $row->id) }}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <button type="submit" class="btn btn-outline-primary">Удалить</button>
                         </form>

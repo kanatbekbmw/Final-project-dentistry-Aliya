@@ -51,6 +51,7 @@
         </div>
 
             <div class="row mb-0">
+                <input type="hidden" class="form-control" name="check" value="0">
                  <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary">
                         Записать
