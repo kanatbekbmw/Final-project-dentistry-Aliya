@@ -20,6 +20,8 @@ use App\Http\Controllers\Admin\DailyAccountings\DailyAccountingsAdminController;
 
 use App\Http\Controllers\Admin\Services\ServicesController;
 
+use App\Http\Controllers\Admin\Doctor\DoctorInfoController;
+
 
 
 use App\Http\Controllers\Doctor\Main\DoctorController;
@@ -79,6 +81,10 @@ Route::get('/admin/record_doctor/index', [RecordController::class, 'record_calen
 
 Route::get('/admin/record_doctor/edit/{id}', [RecordController::class, 'edit'])->name('admin-edit-record_doctor');
 Route::post('/admin/record_doctor/update/{id}', [RecordController::class, 'update'])->name('admin-update-record_doctor');
+
+
+Route::get('/admin/doctor/index', [DoctorInfoController::class, 'index'])->name('admin-doctor');
+
 
 
 Route::get('/admin/patient_card', [PatientCardAdminController::class, 'index'])->name('admin-patient_card');

@@ -33,7 +33,7 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>      
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -89,7 +89,7 @@
 
       <li class="nav-item">
         <a href="#" class="nav-link">
-        
+
         <p>
           Пользовательская часть
         <i class="fas fa-angle-left right"></i>
@@ -103,7 +103,7 @@
           </a>
           </li>
           <li class="nav-item">
-          <a href="../mailbox/compose.html" class="nav-link">
+          <a href="{{ route('admin-doctor') }}" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>Наши доктора</p>
           </a>
@@ -121,13 +121,13 @@
             </a>
           </li>
         </ul>
-      </li>    
-    
+      </li>
+
 </ul>
 
-  
-  
-    
+
+
+
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
