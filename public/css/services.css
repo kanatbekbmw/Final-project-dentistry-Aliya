@@ -1,0 +1,108 @@
+.services {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.inner_services {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.servise_card {
+    display: flex;
+    height: 150px;
+    width: 250px;
+    border: 2px solid grey;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: black;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.servise_card:hover {
+    color: white;
+    background-color: gray;
+}
+
+.inner_orto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.orto_text {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.orto_text p {
+    line-height: 20px;
+}
+
+.ortodont {
+    height: 80vh;
+    padding: 30px 0;
+}
+
+.orto_image img {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.clinic_cards {
+    padding: 50px 0;
+    height: 60vh;
+}
+
+.clinic_card {
+    width: 350px;
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: larger;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 15%);
+}
+
+.inner_cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.clinic_information {
+    height: 500px;
+}
+
+.clinic_information p {
+    width: 900px;
+    margin: 50px auto 0;
+    text-align: justify;
+    line-height: 20px;
+}

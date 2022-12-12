@@ -40,6 +40,8 @@ use App\Http\Controllers\Doctor\ExaminationPatient\ExaminationPatientController;
 
 use App\Http\Controllers\Doctor\Record\RecordDoctorController;
 
+
+use App\Http\Controllers\User\UsersController;
 use Symfony\Component\HttpKernel\DependencyInjection\ServicesResetter;
 
 /*
@@ -222,6 +224,14 @@ Route::group(['middleware' => ['auth', 'doctor']], function() {
     Route::post('/doctor/record_doctor/update/{id}', [RecordDoctorController::class, 'update'])->name('doctor-update-record_doctor');
 });
 
+
+Route::get('/user/index', [UsersController::class, 'index'])->name('user');
+Route::get('/user/doctors', [UsersController::class, 'doctors'])->name('doctors');
+Route::get('/user/clinic', [UsersController::class, 'clinic'])->name('clinic');
+Route::get('/user/services', [UsersController::class, 'services'])->name('services');
+Route::get('/user/doctor/{id}', [UsersController::class, 'doctor'])->name('doctor');
+Route::get('/user/servic/{id}', [UsersController::class, 'servic'])->name('servic');
+Route::get('/user/contacts', [UsersController::class, 'contacts'])->name('contacts');
 
 
 
