@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if(Auth::user()->id == 1)
+                            {{ route('admin') }}
+                    @endif
 
-                    
                     {{ Auth::user()->id }}
                     {{ __('You are logged in!') }}
                 </div>

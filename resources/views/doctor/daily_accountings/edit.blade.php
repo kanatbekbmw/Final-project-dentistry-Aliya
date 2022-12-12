@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Обновление данных в ежедневном учете</h1>
   <table class="table table-striped">
 
     <div class="card-body">
@@ -145,7 +146,7 @@
       </form>
   </div>
 </div>
-    
+
   </table>
 
 

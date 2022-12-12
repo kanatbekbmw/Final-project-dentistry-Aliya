@@ -2,10 +2,17 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h2 class="mt-3 ml-3 mb-3">Осмотор пациента</h2>
 
-    {{-- <a href="{{ route('create-examination', ['idCard' => $row->id]) }}"><button type="button" class="mt-4 mb-4 ml-4 btn btn-secondary">Добавить новый осмотр</button></a> --}}
     <div class="container mt-7">
-        
+
+        <div>
+            <h4>Дата и время осмотра</h4>
+            <h5>{{ $row->created_at->format('d-m-Y, H: m')}}</h5>
+        </div>
+
+        <hr>
+
         <div>
             <h4>Диагноз</h4>
             <h5>{{ $row->diagnosis }}</h5>
@@ -40,7 +47,7 @@
         </div>
 
         <hr>
-        
+
         <div>
             <h4>Прикус</h4>
             <h5>{{ $row->bite }}</h5>
@@ -66,7 +73,7 @@
             <h4>Лечение</h4>
             <h5>{{ $row->treatment }}</h5>
         </div>
-        
+
         <hr>
 
     </div>

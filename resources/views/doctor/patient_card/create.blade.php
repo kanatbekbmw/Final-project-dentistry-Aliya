@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Открытие карточки пациента</h1>
   <table class="table table-striped">
 
     <div class="card-body">
@@ -101,7 +102,7 @@
                     @foreach($user as $row)
                         <option value="{{ $row->id }}"> {{ $row->name }} </option>
                     @endforeach
-                    
+
                 </select>
               </div>
           </div>
@@ -116,7 +117,7 @@
       </form>
   </div>
 </div>
-    
+
   </table>
 
 

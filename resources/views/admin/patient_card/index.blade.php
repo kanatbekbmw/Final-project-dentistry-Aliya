@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Карточка пациента</h1>
   <table class="col-md-12 ml-2 table table-bordered table-sm">
 
     <div class="row">
@@ -36,14 +37,14 @@
                 <td><a href="{{ route('admin-show-card', $row->id) }}">{{ $row->name }}</a></td>
                 <td>{{ $row->address }}</td>
                 <td>{{ $row->phone }}</td>
-                <td>{{ $row->created_at->format('d-m-Y')}}</td>                
+                <td>{{ $row->created_at->format('d-m-Y')}}</td>
                 <td><a href="{{ route('admin-edit-card', $row->id) }}">Обновить</a></td>
                 <td>
                     <form action="{{ route('admin-destroy-card', $row->id) }}" method="POST">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         <button type="submit" class="btn btn-outline-primary">Удалить</button>
                     </form>
-                </td>             
+                </td>
             </tr>
         @endforeach
     </tbody>

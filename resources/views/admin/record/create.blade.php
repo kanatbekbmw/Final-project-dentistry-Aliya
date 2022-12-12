@@ -2,7 +2,9 @@
 @section('content')
 
 <div class="content-wrapper">
+
   <table class="table table-striped">
+      <h1 class="ml-3">Заявка на прием</h1>
 
     <div class="card-body m-3">
       <form method="POST" action="{{ route('admin-store-record') }}">
@@ -61,7 +63,7 @@
       </form>
   </div>
 </div>
-    
+
   </table>
 
 

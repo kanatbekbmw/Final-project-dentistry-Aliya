@@ -2,9 +2,10 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Редактирование данных в карточке пациента</h1>
   <table class="table table-striped">
 
-    <div class="card-body">
+    <div class="card-body mt-3">
       <form method="POST" action="{{ route('admin-update-card', $card->id) }}">
           @csrf
 
@@ -101,7 +102,7 @@
                   @foreach($user as $row)
                       <option value="{{ $row->id }}" @if($row->id == $card->user_id) {{ 'selected' }} @endif> {{ $row->name }} </option>
                   @endforeach
-                  
+
               </select>
             </div>
         </div>
@@ -109,14 +110,14 @@
         <div class="row mb-0">
             <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn btn-primary">
-                    Обновить 
+                    Обновить
                 </button>
             </div>
         </div>
     </form>
 </div>
 </div>
-  
+
 </table>
 
 

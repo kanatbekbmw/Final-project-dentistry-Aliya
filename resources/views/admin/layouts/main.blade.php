@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -18,6 +18,7 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }} ">
   <link rel="stylesheet" href="{{ asset("css/app.css") }}">
+    <script src="{{ asset("js/app.js") }}"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -35,6 +36,25 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
+
+      <ul class="navbar-nav ms-auto" style="margin-right: 55px">
+          <!-- Authentication Links -->
+          <li class="nav-item dropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                  {{ __('Выйти') }}
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+              </div>
+          </li>
+      </ul>
   </nav>
   <!-- /.navbar -->
 
@@ -43,8 +63,8 @@
     <ul class="pt-4 nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
           <a href="{{ route('users') }}" class="nav-link">
-            <i class="nav-icon fa fa-users" aria-hidden="true"></i>
-            <p>
+            <i class="nav-icon fa fa-user-circle" aria-hidden="true"></i>
+              <p>
               Пользователи
             </p>
           </a>
@@ -53,16 +73,16 @@
 
       <li class="nav-item">
         <a href="{{ route('record') }}" class="nav-link">
-          <i class="nav-icon fa fa-users" aria-hidden="true"></i>
+          <i class="nav-icon fa fa-envelope-open" aria-hidden="true"></i>
           <p>
-            Записи
+            Заявки на прием
           </p>
         </a>
       </li>
 
       <li class="nav-item">
         <a href="{{ route('admin-record_doctor') }}" class="nav-link">
-          <i class="nav-icon fa fa-users" aria-hidden="true"></i>
+          <i class="nav-icon fa fa-calendar-check" aria-hidden="true"></i>
           <p>
             Записи к Врачу
           </p>
@@ -109,13 +129,13 @@
           </a>
           </li>
           <li class="nav-item">
-            <a href="../mailbox/read-mail.html" class="nav-link">
+            <a href="{{ route('admin-chart') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>График работы</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="../mailbox/read-mail.html" class="nav-link">
+            <a href="{{ route('admin-clinic') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>О клинике</p>
             </a>

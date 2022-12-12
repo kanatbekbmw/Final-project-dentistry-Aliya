@@ -16,11 +16,9 @@ class CreateDoctorsTable extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
             $table->text('img');
-            $table->string('specialization');
-            $table->string('experiense');
+            $table->integer('experience');
+            $table->string('speciality');
             $table->string('education');
             $table->timestamps();
         });
@@ -34,6 +32,5 @@ class CreateDoctorsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('doctors');
-
     }
 }

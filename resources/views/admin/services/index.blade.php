@@ -23,7 +23,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         <button type="submit" class="btn btn-outline-primary">Удалить</button>
                     </form>
-                </td>             
+                </td>
             </tr>
         @endforeach
     </tbody>

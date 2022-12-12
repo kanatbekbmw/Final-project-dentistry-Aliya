@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Добавление ежедневного учета</h1>
   <table class="table table-striped">
 
     <div class="card-body mt-3">
@@ -141,7 +142,7 @@
                 <select name="user_id">
                     @foreach($user as $row)
                         <option value="{{ $row->id }}"> {{ $row->name }} </option>
-                    @endforeach            
+                    @endforeach
                 </select>
               </div>
         </div>
@@ -156,7 +157,7 @@
       </form>
   </div>
 </div>
-    
+
   </table>
 
 

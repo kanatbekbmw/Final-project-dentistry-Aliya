@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Добавление ежедневного учета</h1>
   <table class="table table-striped">
 
     <div class="card-body">
@@ -151,7 +152,7 @@
       </form>
   </div>
 </div>
-    
+
   </table>
 
 

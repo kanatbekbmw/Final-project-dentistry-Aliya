@@ -15,7 +15,7 @@ class DailyAccountingsController extends Controller
 {
     public function index(DailyFilter $request)
     {
-        $card = DailyAccountings::where('user_id', Auth::user()->id)->filter($request)->paginate(1);
+        $card = DailyAccountings::where('user_id', Auth::user()->id)->filter($request)->paginate(10);
         return view('doctor.daily_accountings.index', compact('card'));
     }
 
@@ -25,7 +25,7 @@ class DailyAccountingsController extends Controller
     }
 
     public function store(Request $request)
-    {    
+    {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required'],
@@ -41,13 +41,13 @@ class DailyAccountingsController extends Controller
 
         DailyAccountings::create($data);
 
-        return Redirect(route('daily_accountings'));    
+        return Redirect(route('daily_accountings'));
     }
 
     public function show($id)
     {
         $row = DailyAccountings::find($id);
-        return view('doctor.daily_accountings.show', compact('row'));        
+        return view('doctor.daily_accountings.show', compact('row'));
     }
 
     public function edit($id)
@@ -80,7 +80,7 @@ class DailyAccountingsController extends Controller
     public function destroy($id)
     {
         DailyAccountings::find($id)->delete();
-        
+
         return Redirect(route('daily_accountings'));
     }
 }

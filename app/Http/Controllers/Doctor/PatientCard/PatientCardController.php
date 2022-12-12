@@ -16,8 +16,8 @@ class PatientCardController extends Controller
 {
     public function index(PatientFilter $request)
     {
-        $card = PatientCard::filter($request)->get(); 
-        return view('doctor.patient_card.index', compact('card'));   
+        $card = PatientCard::filter($request)->get();
+        return view('doctor.patient_card.index', compact('card'));
     }
 
     public function create()
@@ -27,7 +27,7 @@ class PatientCardController extends Controller
     }
 
     public function store(Request $request)
-    {    
+    {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required'],
@@ -40,27 +40,27 @@ class PatientCardController extends Controller
 
         PatientCard::create($data);
 
-        return Redirect(route('patient_card'));    
+        return Redirect(route('patient_card'));
     }
 
     public function show($id)
     {
         $row = PatientCard::find($id);
-        return view('doctor.patient_card.show', compact('row'));        
+        return view('doctor.patient_card.show', compact('row'));
     }
 
     public function edit($id)
     {
-        
+
     }
 
     public function update(Request $request, $id)
     {
-       
+
     }
 
     public function destroy($id)
     {
-      
+
     }
 }

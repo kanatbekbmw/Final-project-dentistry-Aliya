@@ -2,14 +2,15 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Ежедневный учет</h1>
   <table class="col-md-12 ml-2 table table-striped">
 
    <div class="row mb-4">
-        <a class="col-md-6" href="{{ route('create-accountings') }}"><button type="button" class="mt-4 mb-4 btn btn-secondary">Добавить запись</button></a>
+        <a class="col-md-6 ml-3" href="{{ route('create-accountings') }}"><button type="button" class="mt-4 mb-4 btn btn-secondary">Добавить запись</button></a>
 
           <div class="col-md-3 mt-4">
               <form action="{{ route('daily_accountings') }}" method="GET">
-                  <select name="time" class="custom-select" style="max-width: 50%">
+                  <select name="time" class="custom-select" style="max-width: 50%; height: 48px">
                       <option value="all" @if(isset($_GET['time'])) @if($_GET['time'] == 'all') selected @endif @endif>За все время</option>
                       <option value="day" @if(isset($_GET['time'])) @if($_GET['time'] == 'day') selected @endif @endif>За сегодня</option>
                       <option value="month" @if(isset($_GET['time'])) @if($_GET['time'] == 'month') selected @endif @endif>За месяц</option>

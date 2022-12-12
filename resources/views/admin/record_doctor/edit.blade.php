@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Редактирования записи пациента на прием</h1>
   <table class="table table-striped">
 
     <div class="card-body m-3">
@@ -65,20 +66,17 @@
           </div>
 
           <div class="row mb-3">
-            <label for="doctor" class="col-md-3 col-form-label text-md-end">Время приема</label>
+            <label for="time" class="col-md-3 col-form-label text-md-end">Время приема</label>
+
 
               <div class="col-md-6">
                 <select name="time">
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
-                    <option value="11:00">11:00</option>
-                    <option value="12:00">12:00</option>
-                    <option value="13:00">13:00</option>
-                    <option value="14:00">14:00</option>
-                    <option value="15:00">15:00</option>
-                    <option value="16:00">16:00</option>
-                    <option value="17:00">17:00</option>
-                    <option value="18:00">18:00</option>
+                    @foreach($workHours as $row)
+                            <option value="{{ $row['hour'] }}"
+                            @if($row['hour'] == $card->time) {{ 'selected style=background-color:yellow;' }} @endif
+                            @if(isset($row['busy'])) {{ 'style=background-color:red;' }}@endif>
+                             {{ $row['hour'] }} </option>
+                    @endforeach
                 </select>
               </div>
           </div>
@@ -106,7 +104,7 @@
             </div>
       </form>
   </div>
-</div>
+
 
   </table>
 

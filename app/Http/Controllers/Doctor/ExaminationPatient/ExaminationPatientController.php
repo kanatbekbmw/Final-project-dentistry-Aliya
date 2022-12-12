@@ -15,7 +15,7 @@ class ExaminationPatientController extends Controller
 {
     public function index()
     {
-       
+
     }
 
     public function create($idCard)
@@ -25,7 +25,7 @@ class ExaminationPatientController extends Controller
     }
 
     public function store(Request $request, $idCard)
-    {    
+    {
         $data = $request->validate([
             'diagnosis' => ['required', 'string'],
             'complaints' => ['required', 'string'],
@@ -42,27 +42,27 @@ class ExaminationPatientController extends Controller
 
         ExaminationPatient::create($data);
 
-        return Redirect(route('show-card', $idCard));  
+        return Redirect(route('show-card', $idCard));
     }
 
     public function show($id)
     {
         $row = ExaminationPatient::find($id);
-        return view('doctor.examination_patient.show', compact('row'));           
+        return view('doctor.examination_patient.show', compact('row'));
     }
 
     public function edit($id)
     {
-        
+
     }
 
     public function update(Request $request, $id)
     {
-       
+
     }
 
     public function destroy($id)
     {
-      
+
     }
 }

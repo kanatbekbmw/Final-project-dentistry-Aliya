@@ -32,8 +32,27 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>      
+      </li>
     </ul>
+
+      <ul class="navbar-nav ms-auto">
+          <!-- Authentication Links -->
+          <li class="nav-item dropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                  {{ __('Выйти') }}
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+              </div>
+          </li>
+      </ul>
   </nav>
   <!-- /.navbar -->
 
@@ -57,13 +76,23 @@
             </p>
           </a>
         </li>
+
+        <li class="nav-item">
+            <a href="{{ route('doctor-record_doctor') }}" class="nav-link">
+                <i class="nav-icon fa fa-calendar-check" aria-hidden="true"></i>
+                <p>
+                    Календарь записей
+                </p>
+            </a>
+        </li>
     </ul>
-  
-    
+
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-    @yield('content')
+    <div style="max-width: 99%">
+        @yield('content')
+    </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Стоматология Алия</strong>

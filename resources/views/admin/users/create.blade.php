@@ -2,9 +2,10 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Добавление аккаунта на доктора</h1>
   <table class="table table-striped">
 
-    <div class="card-body">
+    <div class="card-body mt-3">
       <form method="POST" action="{{ route('store-users') }}">
           @csrf
 
@@ -69,7 +70,7 @@
       </form>
   </div>
 </div>
-    
+
   </table>
 
 

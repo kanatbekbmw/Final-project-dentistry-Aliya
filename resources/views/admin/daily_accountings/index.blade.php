@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Ежедневный учет</h1>
   <table class="col-md-12 ml-2 pb-10 table table-striped">
 
     <div class="row mb-4">

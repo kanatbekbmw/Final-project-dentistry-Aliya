@@ -48,26 +48,26 @@
           <h5 style="text-align: center" class="mt-3 mb-3">{{ $examination->created_at->format('d-m-Y') }}</h5>
           <tbody>
             <tr>
-              <td><a href="{{ route('show-examination', $examination->id) }}">{{ $examination->diagnosis }}</a></td> 
+              <td><a href="{{ route('admin-show-examination', $examination->id) }}">{{ $examination->diagnosis }}</a></td>
               <td>{{ $examination->complaints }}</td>
               <td>{{ $examination->created_at->format('H: m') }}</td>
-              <td>{{ $examination->user->name }}</td> 
+              <td>{{ $examination->user->name }}</td>
               <td><a href="{{ route('admin-edit-examination', $examination->id) }}">Обновить</a></td>
               <td>
                   <form action="{{ route('admin-destroy-examination', $examination->id) }}" method="POST">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                       <button type="submit" class="btn btn-outline-primary">Удалить</button>
                   </form>
-              </td>       
+              </td>
             </tr>
-            
+
           </tbody>
         </table>
         @endforeach
 
-      
+
     </div>
-        
+
 
 </div>
 @endsection

@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
+    <h1 class="ml-3">Заявки на прием</h1>
     <a class="col-md-8" href="{{ route('admin-create-record') }}"><button type="button" class="mt-4 mb-4 ml-4 btn btn-secondary">Добавить запись</button></a>
 
     <table class="col-md-12 ml-2 pb-10 table table-striped">
